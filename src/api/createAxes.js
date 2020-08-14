@@ -69,9 +69,7 @@ const createAxes = (config, pc, xscale, flags, axis) =>
       .text(dimensionLabels(config))
       .on('dblclick', flipAxisAndUpdatePCP(config, pc, axis))
       .on('wheel', rotateLabels(config, pc))
-      .on("click", function(){
-        console.log("clicked");
-      });
+      .on("click", flipAxisAndUpdatePCP(config, pc, axis));
 
     if (config.nullValueSeparator === 'top') {
       pc.svg

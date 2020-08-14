@@ -53,9 +53,7 @@ const updateAxes = (config, pc, position, axis, flags) => (
     .text(dimensionLabels(config))
     .on('dblclick', flipAxisAndUpdatePCP(config, pc, axis))
     .on('wheel', rotateLabels(config, pc))
-    .on("click", function(){
-      console.log("clicked");
-    });
+    .on("click", flipAxisAndUpdatePCP(config, pc, axis));
 
   // Update
   g_data.attr('opacity', 0);
